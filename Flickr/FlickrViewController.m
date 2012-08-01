@@ -7,6 +7,7 @@
 //
 
 #import "FlickrViewController.h"
+#import "FlickrFetcher.h"
 
 @interface FlickrViewController ()
 
@@ -14,10 +15,18 @@
 
 @implementation FlickrViewController
 
+
+
+
+
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+    
+    NSLog(@"%@",[FlickrFetcher topPlaces]);
+    
 }
 
 - (void)viewDidUnload
