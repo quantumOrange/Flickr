@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "SubtileTableViewController.h"
 
-@interface PhotosInPlaceTVC : UITableViewController
-@property (nonatomic, strong) NSArray *data;
+@interface PhotosInPlaceTVC : SubtileTableViewController
+
 @end

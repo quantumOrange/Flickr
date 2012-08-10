@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "SubtileTableViewController.h"
 @class TopPlacesTVC;
 
 @protocol TopPlacesTVCDelegate 
@@ -14,10 +15,6 @@
 -(void) TVC:(TopPlacesTVC *) sender choseTableCell:(NSDictionary *)tableCellData;
 @end
 
-@interface TopPlacesTVC : UITableViewController
+@interface TopPlacesTVC : SubtileTableViewController
 
-//tableData is an array of dictionarys
-@property (nonatomic, strong) NSArray *tableData;
-@property (nonatomic, strong)  NSString *cellIdentifier;
-@property (nonatomic, weak) id <TopPlacesTVCDelegate> delegate;
 @end

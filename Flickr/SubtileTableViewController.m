@@ -73,8 +73,24 @@
     NSDictionary *tableCellData = [self.tableData objectAtIndex:indexPath.row];
     
     
-    cell.textLabel.text = [self tableCellTitle:tableCellData];
-    cell.detailTextLabel.text= [self tableCellSubtitle:tableCellData];
+    if ([self tableCellTitle:tableCellData]  && ![[self tableCellTitle:tableCellData] isEqualToString:@""]) 
+    {
+        cell.textLabel.text = [self tableCellTitle:tableCellData];
+    }
+    else 
+    {
+        cell.textLabel.text =@"Unknown";
+    }
+    
+    
+    if ([self tableCellSubtitle:tableCellData] && ![[self tableCellSubtitle:tableCellData]  isEqualToString:@""]) 
+    {
+        cell.detailTextLabel.text= [self tableCellSubtitle:tableCellData];
+    }
+    else 
+    {
+        cell.detailTextLabel.text=@"No description availble";
+    }
     
     return cell;
 }
@@ -84,7 +100,6 @@
     NSString *title=[tableCellData objectForKey:@"title"];
     return title;
 }
-
 
 
 -(NSString *) tableCellSubtitle: (NSDictionary *) tableCellData
