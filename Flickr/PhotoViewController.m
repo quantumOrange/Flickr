@@ -27,13 +27,9 @@
     NSMutableArray *recentPhotos;
     recentPhotos = [[[NSUserDefaults standardUserDefaults] objectForKey:@"recentlyViewedPhotos"] mutableCopy];
     if(!recentPhotos)  recentPhotos =[[NSMutableArray alloc] init];
-    [recentPhotos addObject:photo];
+    [recentPhotos insertObject:photo atIndex:0];
+    if ([recentPhotos count]>50) [recentPhotos removeLastObject];
     
-    NSLog(@"%@",recentPhotos);
-    
-    if ([recentPhotos count]>50) {
-        [recentPhotos removeObjectAtIndex:0];
-    }
     
     [[NSUserDefaults standardUserDefaults] setObject:recentPhotos forKey:@"recentlyViewedPhotos"];
     [NSUserDefaults resetStandardUserDefaults];
