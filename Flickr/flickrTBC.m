@@ -7,7 +7,7 @@
 //
 
 #import "flickrTBC.h"
-
+#import "TopPlacesTVC.h"
 @interface flickrTBC () <UITabBarControllerDelegate>
 
 @end
@@ -26,7 +26,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view.
+	self.delegate=self;
 }
 
 - (void)viewDidUnload
@@ -46,5 +46,9 @@
     NSLog(@"%@",segue.identifier);
 }
 
+- (void)tabBarController:(UITabBarController *)tabBarController didSelectViewController:(UIViewController *)viewController
+{
+    NSLog(@"%@",viewController);
+}
 
 @end
