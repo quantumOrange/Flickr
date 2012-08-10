@@ -24,15 +24,28 @@
     UIImage *image =[UIImage imageWithData:imageData];
     self.photoView.image = image;
     
+    //update the list of recently viewd photos
     NSMutableArray *recentPhotos;
     recentPhotos = [[[NSUserDefaults standardUserDefaults] objectForKey:@"recentlyViewedPhotos"] mutableCopy];
     if(!recentPhotos)  recentPhotos =[[NSMutableArray alloc] init];
-    [recentPhotos insertObject:photo atIndex:0];
-    if ([recentPhotos count]>50) [recentPhotos removeLastObject];
     
+    //check if the photo we're viewing is already recently viewed using its unique id
+    NSNumber *photoId = [photo objectForKey:@"id"];
+    BOOL photoIsAlreadyRecentlyViewed=NO;
+    for (NSDictionary *recentPhoto in recentPhotos) {
+        if([photoId isEqual:[recentPhoto objectForKey:@"id"]]) photoIsAlreadyRecentlyViewed=YES;
+    }
+    
+    
+    if (!photoIsAlreadyRecentlyViewed) [recentPhotos insertObject:photo atIndex:0];
+    
+    if ([recentPhotos count]>50) [recentPhotos removeLastObject];
+    NSLog(@"%@",recentPhotos);
     [[NSUserDefaults standardUserDefaults] setObject:recentPhotos forKey:@"recentlyViewedPhotos"];
     [NSUserDefaults resetStandardUserDefaults];
 }
+     
+
 
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
