@@ -30,7 +30,6 @@
     [recentPhotos insertObject:photo atIndex:0];
     if ([recentPhotos count]>50) [recentPhotos removeLastObject];
     
-    
     [[NSUserDefaults standardUserDefaults] setObject:recentPhotos forKey:@"recentlyViewedPhotos"];
     [NSUserDefaults resetStandardUserDefaults];
 }
