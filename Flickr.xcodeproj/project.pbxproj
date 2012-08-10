@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		ED3A32EF15D56CA400A871B7 /* PhotoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ED3A32EE15D56CA400A871B7 /* PhotoViewController.m */; };
 		EDFB5F6315BE9509009BBA12 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EDFB5F6215BE9509009BBA12 /* UIKit.framework */; };
 		EDFB5F6515BE9509009BBA12 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EDFB5F6415BE9509009BBA12 /* Foundation.framework */; };
 		EDFB5F6715BE9509009BBA12 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EDFB5F6615BE9509009BBA12 /* CoreGraphics.framework */; };
@@ -25,6 +26,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		ED3A32ED15D56CA400A871B7 /* PhotoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoViewController.h; sourceTree = "<group>"; };
+		ED3A32EE15D56CA400A871B7 /* PhotoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoViewController.m; sourceTree = "<group>"; };
 		EDFB5F5E15BE9509009BBA12 /* Flickr.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Flickr.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EDFB5F6215BE9509009BBA12 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		EDFB5F6415BE9509009BBA12 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -108,6 +111,8 @@
 				EDFB5F7415BE9509009BBA12 /* MainStoryboard_iPhone.storyboard */,
 				EDFB5FF615BF00DF009BBA12 /* PhotosInPlaceTVC.h */,
 				EDFB5FF715BF00DF009BBA12 /* PhotosInPlaceTVC.m */,
+				ED3A32ED15D56CA400A871B7 /* PhotoViewController.h */,
+				ED3A32EE15D56CA400A871B7 /* PhotoViewController.m */,
 				EDFB5FC315BECD75009BBA12 /* RecentlyViewedTVC.h */,
 				EDFB5FC415BECD75009BBA12 /* RecentlyViewedTVC.m */,
 				EDFB5F8915BEBC60009BBA12 /* flickrTBC.h */,
@@ -206,6 +211,7 @@
 				EDFB5FC515BECD76009BBA12 /* RecentlyViewedTVC.m in Sources */,
 				EDFB5FF815BF00E0009BBA12 /* PhotosInPlaceTVC.m in Sources */,
 				EDFB5FFE15BF1D08009BBA12 /* SubtileTableViewController.m in Sources */,
+				ED3A32EF15D56CA400A871B7 /* PhotoViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -327,6 +333,7 @@
 				EDFB5F8115BE9509009BBA12 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
