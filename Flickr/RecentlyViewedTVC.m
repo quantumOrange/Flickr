@@ -14,13 +14,10 @@
 @synthesize tableData=_tableData;
 @synthesize cellIdentifier=_cellIdentifier;
 
--(NSArray *) tableData
+-(void) viewWillAppear:(BOOL)animated
 {
-    if(!_tableData)
-    {
-        //_tableData= 
-    }
-    return _tableData;
+    self.tableData=[[NSUserDefaults standardUserDefaults] objectForKey:@"recentlyViewedPhotos"];
+    [self.tableView reloadData];
 }
 
 -(NSString *) cellIdentifier
@@ -31,7 +28,6 @@
     }
     return _cellIdentifier;
 }
-
 
 -(NSString *) tableCellTitle: (NSDictionary *) tableCellData
 {

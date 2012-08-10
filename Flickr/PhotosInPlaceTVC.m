@@ -20,7 +20,7 @@
 -(void) TVC:(TopPlacesTVC *) sender choseTableCell:(NSDictionary *)place
 {
     self.tableData = [FlickrFetcher photosInPlace:place maxResults:50];
-    NSLog(@"%@",self.tableData);
+   // NSLog(@"%@",self.tableData);
 }
 
 

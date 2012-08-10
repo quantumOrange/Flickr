@@ -23,7 +23,20 @@
     NSData *imageData = [NSData dataWithContentsOfURL:photoURL];
     UIImage *image =[UIImage imageWithData:imageData];
     self.photoView.image = image;
-   
+    
+    NSMutableArray *recentPhotos;
+    recentPhotos = [[[NSUserDefaults standardUserDefaults] objectForKey:@"recentlyViewedPhotos"] mutableCopy];
+    if(!recentPhotos)  recentPhotos =[[NSMutableArray alloc] init];
+    [recentPhotos addObject:photo];
+    
+    NSLog(@"%@",recentPhotos);
+    
+    if ([recentPhotos count]>50) {
+        [recentPhotos removeObjectAtIndex:0];
+    }
+    
+    [[NSUserDefaults standardUserDefaults] setObject:recentPhotos forKey:@"recentlyViewedPhotos"];
+    [NSUserDefaults resetStandardUserDefaults];
 }
 
 
