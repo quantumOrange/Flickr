@@ -9,21 +9,23 @@
 #import "PhotoViewController.h"
 #import "SubtileTableViewController.h"
 #import "FlickrFetcher.h"
-@interface PhotoViewController () <SubtileTableViewControllerDelegate>
-@property (weak, nonatomic) IBOutlet UIImageView *photoView;
+@interface PhotoViewController () <SubtileTableViewControllerDelegate , UIScrollViewDelegate>
+
 
 @end
 
 @implementation PhotoViewController 
 @synthesize photoView;
+@synthesize scrollView;
 
 -(void) TVC:(SubtileTableViewController *) sender choseTableCell:(NSDictionary *)photo
 {
-    NSURL *photoURL = [FlickrFetcher urlForPhoto:photo format:FlickrPhotoFormatLarge];
-    NSData *imageData = [NSData dataWithContentsOfURL:photoURL];
-    UIImage *image =[UIImage imageWithData:imageData];
+   NSURL *photoURL = [FlickrFetcher urlForPhoto:photo format:FlickrPhotoFormatLarge];
+   NSData *imageData = [NSData dataWithContentsOfURL:photoURL];
+   UIImage *image =[UIImage imageWithData:imageData];
     self.photoView.image = image;
-    
+    self.title=  [photo objectForKey:FLICKR_PHOTO_TITLE];
+   
     //update the list of recently viewd photos
     NSMutableArray *recentPhotos;
     recentPhotos = [[[NSUserDefaults standardUserDefaults] objectForKey:@"recentlyViewedPhotos"] mutableCopy];
@@ -40,12 +42,20 @@
     if (!photoIsAlreadyRecentlyViewed) [recentPhotos insertObject:photo atIndex:0];
     
     if ([recentPhotos count]>50) [recentPhotos removeLastObject];
-    NSLog(@"%@",recentPhotos);
+    
     [[NSUserDefaults standardUserDefaults] setObject:recentPhotos forKey:@"recentlyViewedPhotos"];
     [NSUserDefaults resetStandardUserDefaults];
+        
+    self.scrollView.contentSize = self.photoView.image.size;
+    
+    self.photoView.frame = CGRectMake(0,0,self.photoView.image.size.width,self.photoView.image.size.height);
+    
 }
      
-
+- (UIView *) viewForZoomingInScrollView:(UIScrollView *) scrollView
+{
+    return self.photoView;
+}
 
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -60,12 +70,13 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view.
+    self.scrollView.delegate = self;
 }
 
 - (void)viewDidUnload
 {
     [self setPhotoView:nil];
+    [self setScrollView:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
 }
