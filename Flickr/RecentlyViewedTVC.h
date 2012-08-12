@@ -6,8 +6,8 @@
 //  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
 //
 
-#import "SubtileTableViewController.h"
+#import "SubtitleTableViewController.h"
 
-@interface RecentlyViewedTVC : SubtileTableViewController
+@interface RecentlyViewedTVC : SubtitleTableViewController
 
 @end

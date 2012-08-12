@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "SubtileTableViewController.h"
+#import "SubtitleTableViewController.h"
 @class TopPlacesTVC;
 
 @protocol TopPlacesTVCDelegate 
@@ -15,6 +15,6 @@
 -(void) TVC:(TopPlacesTVC *) sender choseTableCell:(NSDictionary *)tableCellData;
 @end
 
-@interface TopPlacesTVC : SubtileTableViewController
+@interface TopPlacesTVC : SubtitleTableViewController
 
 @end

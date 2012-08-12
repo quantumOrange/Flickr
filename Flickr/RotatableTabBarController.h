@@ -1,5 +1,5 @@
 //
-//  PhotosInPlaceTVC.h
+//  flickrTBC.h
 //  Flickr
 //
 //  Created by David Crooks on 24/07/2012.
@@ -7,8 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "SubtitleTableViewController.h"
 
-@interface PhotosInPlaceTVC : SubtitleTableViewController
+@interface RotatableTabBarController: UITabBarController
 
 @end

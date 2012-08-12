@@ -14,6 +14,10 @@
 @synthesize tableData=_tableData;
 @synthesize cellIdentifier=_cellIdentifier;
 
+
+
+
+
 -(void) viewWillAppear:(BOOL)animated
 {
     self.tableData=[[NSUserDefaults standardUserDefaults] objectForKey:@"recentlyViewedPhotos"];

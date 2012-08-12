@@ -104,11 +104,11 @@
             </objects>
             <point key="canvasLocation" x="734" y="241"/>
         </scene>
-        <!--Photo View Controller-->
+        <!--Scrolling Image View Controller-->
         <scene sceneID="qvV-1t-dcO">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QsB-61-Zqs" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <viewController id="Urm-nU-oJi" customClass="PhotoViewController" sceneMemberID="viewController">
+                <viewController id="Urm-nU-oJi" customClass="ScrollingImageViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="gHy-xi-NrR">
                         <rect key="frame" x="0.0" y="64" width="320" height="367"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -128,7 +128,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="bK5-lg-rmd"/>
                     <connections>
-                        <outlet property="photoView" destination="eVZ-6d-Fl0" id="2Yj-mR-2Sh"/>
+                        <outlet property="imageView" destination="eVZ-6d-Fl0" id="kpI-xO-59D"/>
                         <outlet property="scrollView" destination="sgU-96-huf" id="Nlz-sc-yLk"/>
                     </connections>
                 </viewController>
@@ -184,11 +184,11 @@
             </objects>
             <point key="canvasLocation" x="1216" y="-390"/>
         </scene>
-        <!--Photo View Controller-->
+        <!--Scrolling Image View Controller-->
         <scene sceneID="AoR-4Q-oy0">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZZt-ML-j3c" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <viewController id="yyk-t7-WHI" customClass="PhotoViewController" sceneMemberID="viewController">
+                <viewController id="yyk-t7-WHI" customClass="ScrollingImageViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="4e5-eE-iQy">
                         <rect key="frame" x="0.0" y="64" width="320" height="367"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -208,18 +208,18 @@
                     </view>
                     <navigationItem key="navigationItem" id="VHt-Xf-azQ"/>
                     <connections>
-                        <outlet property="photoView" destination="zzg-PZ-ORe" id="7Hz-S7-sp3"/>
+                        <outlet property="imageView" destination="zzg-PZ-ORe" id="i5W-6j-piP"/>
                         <outlet property="scrollView" destination="eFi-J9-oUw" id="MLQ-zI-2BA"/>
                     </connections>
                 </viewController>
             </objects>
             <point key="canvasLocation" x="1660" y="-390"/>
         </scene>
-        <!--FlickrTBC - tab thing-->
+        <!--Rotatable Tab Bar Controller - tab thing-->
         <scene sceneID="iEP-bs-DqT">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fJe-xO-pb8" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <tabBarController title="tab thing" id="aDw-hp-Ket" customClass="flickrTBC" sceneMemberID="viewController">
+                <tabBarController title="tab thing" id="aDw-hp-Ket" customClass="RotatableTabBarController" sceneMemberID="viewController">
                     <toolbarItems/>
                     <nil key="simulatedBottomBarMetrics"/>
                     <tabBar key="tabBar" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="ViM-L5-baX">
@@ -272,30 +272,6 @@
             <point key="canvasLocation" x="208" y="241"/>
         </scene>
     </scenes>
-    <classes>
-        <class className="PhotoViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/PhotoViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="photoView" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="scrollView" candidateClass="UIScrollView"/>
-            </relationships>
-        </class>
-        <class className="PhotosInPlaceTVC" superclassName="SubtileTableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/PhotosInPlaceTVC.h"/>
-        </class>
-        <class className="RecentlyViewedTVC" superclassName="SubtileTableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/RecentlyViewedTVC.h"/>
-        </class>
-        <class className="SubtileTableViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/SubtileTableViewController.h"/>
-        </class>
-        <class className="TopPlacesTVC" superclassName="SubtileTableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/TopPlacesTVC.h"/>
-        </class>
-        <class className="flickrTBC" superclassName="UITabBarController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/flickrTBC.h"/>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
