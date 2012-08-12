@@ -33,13 +33,12 @@
     
     //check if the photo we're viewing is already recently viewed using its unique id
     NSNumber *photoId = [photo objectForKey:@"id"];
-    BOOL photoIsAlreadyRecentlyViewed=NO;
-    for (NSDictionary *recentPhoto in recentPhotos) {
-        if([photoId isEqual:[recentPhoto objectForKey:@"id"]]) photoIsAlreadyRecentlyViewed=YES;
+    
+    
+    for (int i=0; i<[recentPhotos count]; i++) {
+        if([photoId isEqual:[[recentPhotos objectAtIndex:i] objectForKey:@"id"]])  [recentPhotos removeObjectAtIndex:i];
     }
-    
-    
-    if (!photoIsAlreadyRecentlyViewed) [recentPhotos insertObject:photo atIndex:0];
+    [recentPhotos insertObject:photo atIndex:0];
     
     if ([recentPhotos count]>50) [recentPhotos removeLastObject];
     
@@ -47,9 +46,9 @@
     [NSUserDefaults resetStandardUserDefaults];
         
     self.scrollView.contentSize = self.photoView.image.size;
-    
     self.photoView.frame = CGRectMake(0,0,self.photoView.image.size.width,self.photoView.image.size.height);
-    
+    CGFloat maxZoom = MAX(self.scrollView.bounds.size.width / self.photoView.image.size.width, self.scrollView.bounds.size.height / self.photoView.image.size.height);
+    self.scrollView.zoomScale =maxZoom;
 }
      
 - (UIView *) viewForZoomingInScrollView:(UIScrollView *) scrollView
