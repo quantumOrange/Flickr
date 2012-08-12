@@ -30,16 +30,13 @@
     self.title=  [photo objectForKey:FLICKR_PHOTO_TITLE];
     /////////// END SET IMAGE /////////////////////
    
-    ///////////// RECENT PHOTOS ///////////////////
-    //update the list of recently viewed photos
+    ///////////// UPDATE RECENT PHOTOS ///////////////////
     NSMutableArray *recentPhotos;
     recentPhotos = [[[NSUserDefaults standardUserDefaults] objectForKey:@"recentlyViewedPhotos"] mutableCopy];
     if(!recentPhotos)  recentPhotos =[[NSMutableArray alloc] init];
     
     //check if the photo we're viewing is already recently viewed using its unique id
     NSNumber *photoId = [photo objectForKey:@"id"];
-    
-    
     for (int i=0; i<[recentPhotos count]; i++) {
         if([photoId isEqual:[[recentPhotos objectAtIndex:i] objectForKey:@"id"]])  [recentPhotos removeObjectAtIndex:i];
     }
@@ -49,35 +46,8 @@
     
     [[NSUserDefaults standardUserDefaults] setObject:recentPhotos forKey:@"recentlyViewedPhotos"];
     [NSUserDefaults resetStandardUserDefaults];
-    ///////// END RECENT PHOTOS /////////////////
-    
-    NSLog(@"scroll width: %f",self.scrollView.bounds.size.width);
-    NSLog(@"scroll height: %f",self.scrollView.bounds.size.height);
-    NSLog(@"image width: %f",self.imageView.image.size.width);
-    NSLog(@"image height: %f",self.imageView.image.size.height);
-    
-    //CGFloat zoom;
-    /*
-    if (isLandscape) 
-    {
-       // zoom = MAX(self.scrollView.bounds.size.height / self.photoView.image.size.width, self.scrollView.bounds.size.width / self.photoView.image.size.height);
-        //zoom = MAX(self.scrollView.bounds.size.width / self.photoView.image.size.height, self.scrollView.bounds.size.height / self.photoView.image.size.width);
-        zoom=1.0;
-        //self.photoView.frame = CGRectMake(0,0,self.photoView.image.size.width,self.photoView.image.size.height);
-        self.scrollView.contentSize = self.imageView.bounds.size;
-        self.imageView.frame = CGRectMake(0,0,self.imageView.image.size.height,self.imageView.image.size.width);
-        //CGSize photoLandscape;
-        //photoLandscape.width=self.photoView.image.size.height;
-        //photoLandscape.height=self.photoView.image.size.width;
-        //self.scrollView.contentSize = photoLandscape;
-    }
-    else 
-    {
-        zoom = MAX(self.scrollView.bounds.size.width / self.imageView.image.size.width, self.scrollView.bounds.size.height / self.imageView.image.size.height);
-        self.imageView.frame = CGRectMake(0,0,self.imageView.image.size.width,self.imageView.image.size.height);
-        self.scrollView.contentSize = self.imageView.bounds.size;
-    }
-    */
+    ///////// END UPDATE RECENT PHOTOS /////////////////
+   
     [self setZoomForImage];
 }
   
@@ -131,10 +101,7 @@
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
-    NSLog(@"should autorotate");
-    self.isLandscape = UIInterfaceOrientationIsLandscape(interfaceOrientation);
-    return YES;
-    
+        return YES;
 }
 
 @end

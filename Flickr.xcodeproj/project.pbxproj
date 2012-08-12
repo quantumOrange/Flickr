@@ -26,7 +26,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		ED3A32ED15D56CA400A871B7 /* ScrollingImageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; path = ScrollingImageViewController.h; sourceTree = "<group>"; };
+		ED3A32ED15D56CA400A871B7 /* ScrollingImageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScrollingImageViewController.h; sourceTree = "<group>"; };
 		ED3A32EE15D56CA400A871B7 /* ScrollingImageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScrollingImageViewController.m; sourceTree = "<group>"; };
 		EDFB5F5E15BE9509009BBA12 /* Flickr.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Flickr.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EDFB5F6215BE9509009BBA12 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
